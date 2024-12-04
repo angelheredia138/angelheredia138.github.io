@@ -48,8 +48,9 @@ const App: React.FC = () => {
               Welcome to My Portfolio
             </h1>
             <p className="text-lg mb-6">
-              Crafting sleek and modern digital experiences. Explore my work and
-              get to know me.
+              Hi, I’m Angel Heredia, a Computer Science student at Arizona State
+              University. Here, you’ll find my latest projects, updates, and
+              experience as I prepare for my career in tech.
             </p>
             <a
               href="#about"
@@ -68,8 +69,10 @@ const App: React.FC = () => {
           <div className="glass-container max-w-4xl p-8 text-center mx-auto">
             <h2 className="text-3xl font-semibold mb-4 text-white">About Me</h2>
             <p>
-              I am a passionate developer with a love for creating beautiful,
-              functional, and impactful digital products.
+              I’m passionate about building impactful software and constantly
+              growing as a developer. With graduation in 2025, I’m excited to
+              begin my career and take on challenges in full-stack development
+              and data visualization.
             </p>
           </div>
         </div>
@@ -83,16 +86,28 @@ const App: React.FC = () => {
             <h2 className="text-3xl font-semibold mb-6 text-white">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="glass-container">
-                <h3 className="text-lg font-bold mb-2 text-white">Project 1</h3>
-                <p>A short description of Project 1.</p>
+                <h3 className="text-lg font-bold mb-2 text-white">
+                  Spotify Playback Controller
+                </h3>
+                <p>
+                  A web app to control Spotify playback with authentication and
+                  playlist features.
+                </p>
               </div>
               <div className="glass-container">
-                <h3 className="text-lg font-bold mb-2 text-white">Project 2</h3>
-                <p>A short description of Project 2.</p>
+                <h3 className="text-lg font-bold mb-2 text-white">
+                  Spotify Data Visualization
+                </h3>
+                <p>
+                  Interactive data visualizations to explore Spotify listening
+                  habits.
+                </p>
               </div>
               <div className="glass-container">
-                <h3 className="text-lg font-bold mb-2 text-white">Project 3</h3>
-                <p>A short description of Project 3.</p>
+                <h3 className="text-lg font-bold mb-2 text-white">
+                  Portfolio Website
+                </h3>
+                <p>A showcase of my work, featuring a sleek, modern design.</p>
               </div>
             </div>
           </div>
@@ -106,10 +121,11 @@ const App: React.FC = () => {
           <div className="glass-container max-w-4xl p-8 text-center mx-auto">
             <h2 className="text-3xl font-semibold mb-4 text-white">Contact</h2>
             <p className="text-lg mb-6">
-              I’d love to hear from you! Feel free to reach out.
+              Let’s connect! Whether you’d like to collaborate, chat, or just
+              say hello, feel free to reach out.
             </p>
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:herediafangel@gmail.com.com"
               className="px-6 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition"
             >
               Email Me

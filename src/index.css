@@ -106,18 +106,19 @@ button:focus-visible {
 /* Gooey Blobs */
 .gooey {
   position: absolute;
-  background-image: linear-gradient(
-    120deg,
-    var(--start-color, #34e0f0),
-    var(--end-color, #b400ff)
-  );
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(120deg, var(--start-color), var(--end-color));
+
   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
   width: var(--blob-size, 150px);
   height: var(--blob-size, 150px);
   animation: morph 5s ease-in-out infinite,
     moveInView var(--animation-duration, 60s) linear infinite alternate;
   will-change: border-radius, transform;
-
   left: var(--start-left, 50%);
   top: var(--start-top, 50%);
   transform: translateX(0); /* Start in view */
@@ -184,7 +185,7 @@ button:focus-visible {
 
 /* Blobs in the About Section */
 #about .gooey {
-  --start-color: #2c3e50;
+  --start-color: #386fa7;
   --end-color: #8e44ad;
   --blob-size: 250px;
   --start-top: 60%;
@@ -218,4 +219,10 @@ button:focus-visible {
 .gooey:hover {
   box-shadow: 0 0 20px 5px var(--start-color), 0 0 30px 10px var(--end-color);
   transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .gooey {
+    --blob-size: 120px;
+    --start-top: 70%; /* Push blobs lower */
+  }
 }
