@@ -33,10 +33,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-size: cover;
 }
 
 h1 {
@@ -75,11 +76,135 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Glassmorphism Container */
 .glass-container {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+}
+
+/* Project Card Styling */
+.project-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Gooey Blobs */
+.gooey {
+  position: absolute;
+  background-image: linear-gradient(
+    120deg,
+    var(--start-color, #34e0f0),
+    var(--end-color, #b400ff)
+  );
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  width: var(--blob-size, 150px);
+  height: var(--blob-size, 150px);
+  animation: morph 5s ease-in-out infinite,
+    moveInView var(--animation-duration, 60s) linear infinite alternate;
+  will-change: border-radius, transform;
+  z-index: -1;
+  left: var(--start-left, 50%);
+  top: var(--start-top, 50%);
+  transform: translateX(0); /* Start in view */
+}
+
+/* Keyframes for Morphing */
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 60% 40% 30% 70% / 55% 55% 45% 45%;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* Keyframes for Blobs Moving Right to Left and Back */
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(0); /* Start in the viewport */
+  }
+  50% {
+    transform: translateX(calc(-50vw)); /* Move out to the left */
+  }
+  100% {
+    transform: translateX(0); /* Return to the starting position */
+  }
+}
+
+/* Keyframes for Blobs Moving Left to Right and Back */
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(0); /* Start in the viewport */
+  }
+  50% {
+    transform: translateX(calc(50vw)); /* Move out to the right */
+  }
+  100% {
+    transform: translateX(0); /* Return to the starting position */
+  }
+}
+
+/* Blobs Variants for Each Section */
+
+/* Blobs in the Home Section */
+#home .gooey {
+  --start-color: #ff7eb9;
+  --end-color: #ff65a3;
+  --blob-size: 200px;
+  --start-top: 40%;
+  --animation-duration: 80s;
+  animation: morph 5s ease-in-out infinite,
+    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
+}
+
+/* Blobs in the About Section */
+#about .gooey {
+  --start-color: #7afcff;
+  --end-color: #ffe29f;
+  --blob-size: 250px;
+  --start-top: 60%;
+  --start-left: 25%; /* Ensure blob starts in view */
+  animation: morph 5s ease-in-out infinite,
+    moveRightToLeft var(--animation-duration, 90s) linear infinite alternate;
+}
+
+/* Blobs in the Projects Section */
+#projects .gooey {
+  --start-color: #b388eb;
+  --end-color: #f7c7db;
+  --blob-size: 220px;
+  --start-top: 50%;
+  --start-left: 25%; /* Ensure blob starts in view */
+  --animation-duration: 100s;
+  animation: morph 5s ease-in-out infinite,
+    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
+}
+
+/* Blobs in the Contact Section */
+#contact .gooey {
+  --start-color: #a0c4ff;
+  --end-color: #bdb2ff;
+  --blob-size: 200px;
+  --start-top: 70%;
+  --start-left: 75%; /* Ensure blob starts in view */
+  animation: morph 5s ease-in-out infinite,
+    moveRightToLeft var(--animation-duration, 85s) linear infinite alternate;
 }
