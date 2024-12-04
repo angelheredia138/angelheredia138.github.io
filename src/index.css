@@ -117,10 +117,12 @@ button:focus-visible {
   animation: morph 5s ease-in-out infinite,
     moveInView var(--animation-duration, 60s) linear infinite alternate;
   will-change: border-radius, transform;
-  z-index: -1;
+
   left: var(--start-left, 50%);
   top: var(--start-top, 50%);
   transform: translateX(0); /* Start in view */
+  box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 /* Keyframes for Morphing */
@@ -139,26 +141,31 @@ button:focus-visible {
 /* Keyframes for Blobs Moving Right to Left and Back */
 @keyframes moveRightToLeft {
   0% {
-    transform: translateX(0); /* Start in the viewport */
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
   }
   50% {
-    transform: translateX(calc(-50vw)); /* Move out to the left */
+    transform: translateX(-50vw) translateY(-10vh) scale(1.2);
+    opacity: 0.8;
   }
   100% {
-    transform: translateX(0); /* Return to the starting position */
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
-/* Keyframes for Blobs Moving Left to Right and Back */
 @keyframes moveLeftToRight {
   0% {
-    transform: translateX(0); /* Start in the viewport */
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
   }
   50% {
-    transform: translateX(calc(50vw)); /* Move out to the right */
+    transform: translateX(50vw) translateY(10vh) scale(1.2);
+    opacity: 0.8;
   }
   100% {
-    transform: translateX(0); /* Return to the starting position */
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
@@ -166,8 +173,8 @@ button:focus-visible {
 
 /* Blobs in the Home Section */
 #home .gooey {
-  --start-color: #ff7eb9;
-  --end-color: #ff65a3;
+  --start-color: #3b0d63;
+  --end-color: #d633ff;
   --blob-size: 200px;
   --start-top: 40%;
   --animation-duration: 80s;
@@ -177,8 +184,8 @@ button:focus-visible {
 
 /* Blobs in the About Section */
 #about .gooey {
-  --start-color: #7afcff;
-  --end-color: #ffe29f;
+  --start-color: #2c3e50;
+  --end-color: #8e44ad;
   --blob-size: 250px;
   --start-top: 60%;
   --start-left: 25%; /* Ensure blob starts in view */
@@ -188,8 +195,8 @@ button:focus-visible {
 
 /* Blobs in the Projects Section */
 #projects .gooey {
-  --start-color: #b388eb;
-  --end-color: #f7c7db;
+  --start-color: #5b247a;
+  --end-color: #ff512f;
   --blob-size: 220px;
   --start-top: 50%;
   --start-left: 25%; /* Ensure blob starts in view */
@@ -200,11 +207,15 @@ button:focus-visible {
 
 /* Blobs in the Contact Section */
 #contact .gooey {
-  --start-color: #a0c4ff;
-  --end-color: #bdb2ff;
+  --start-color: #4b0082;
+  --end-color: #00f6ff;
   --blob-size: 200px;
   --start-top: 70%;
   --start-left: 75%; /* Ensure blob starts in view */
   animation: morph 5s ease-in-out infinite,
     moveRightToLeft var(--animation-duration, 85s) linear infinite alternate;
+}
+.gooey:hover {
+  box-shadow: 0 0 20px 5px var(--start-color), 0 0 30px 10px var(--end-color);
+  transition: all 0.3s ease-in-out;
 }
