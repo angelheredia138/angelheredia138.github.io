@@ -70,7 +70,7 @@ const AboutPage: React.FC = () => {
             <img
               src={myFace}
               alt="Angel Heredia"
-              className="w-40 h-40 rounded-full mx-auto border-4 border-purple-600 shadow-lg"
+              className="w-40 h-40 rounded-full mx-auto border-4 border-purple-600 shadow-lg transition-transform transform hover:scale-110"
             />
           </div>
         </div>
@@ -90,55 +90,50 @@ const AboutPage: React.FC = () => {
                   Languages:
                 </h3>
                 <div className="grid grid-cols-2 gap-6 justify-center">
-                  {[
-                    {
-                      Icon: FaPython,
-                      name: "Python",
-                      color: "text-yellow-400",
-                      years: 3,
-                      width: "90%",
-                    },
-                    {
-                      Icon: SiJavascript,
-                      name: "JavaScript",
-                      color: "text-yellow-300",
-                      years: 2,
-                      width: "70%",
-                    },
-                    {
-                      Icon: SiHtml5,
-                      name: "HTML/CSS",
-                      color: "text-orange-500",
-                      years: 2,
-                      width: "70%",
-                    },
-                    {
-                      Icon: SiPostgresql,
-                      name: "SQL",
-                      color: "text-blue-400",
-                      years: 1,
-                      width: "50%",
-                    },
-                  ].map(({ Icon, name, color, years, width }) => (
-                    <div className="group text-center" key={name}>
-                      <Icon
-                        className={`text-4xl ${color} mx-auto group-hover:scale-110 transition-transform`}
-                      />
-                      <p>{name}</p>
-                      <p className="text-sm text-gray-400">{years} years</p>
-                      <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <motion.div
-                          className={`absolute h-2 rounded-full ${color.replace(
-                            "text",
-                            "bg"
-                          )}`}
-                          initial={{ width: 0 }}
-                          animate={{ width }}
-                          transition={{ duration: 1 }}
-                        ></motion.div>
-                      </div>
+                  <div className="group text-center">
+                    <FaPython className="text-4xl text-yellow-400 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>Python</p>
+                    <p className="text-sm text-gray-400">3 years</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-yellow-400 rounded-full"
+                        style={{ width: "90%" }}
+                      ></div>
                     </div>
-                  ))}
+                  </div>
+                  <div className="group text-center">
+                    <SiJavascript className="text-4xl text-yellow-300 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>JavaScript</p>
+                    <p className="text-sm text-gray-400">2 years</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-yellow-300 rounded-full"
+                        style={{ width: "70%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="group text-center">
+                    <SiHtml5 className="text-4xl text-orange-500 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>HTML/CSS</p>
+                    <p className="text-sm text-gray-400">2 years</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-orange-500 rounded-full"
+                        style={{ width: "70%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="group text-center">
+                    <SiPostgresql className="text-4xl text-blue-400 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>SQL</p>
+                    <p className="text-sm text-gray-400">1 year</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-blue-400 rounded-full"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -148,55 +143,50 @@ const AboutPage: React.FC = () => {
                   Frameworks & Tools:
                 </h3>
                 <div className="grid grid-cols-2 gap-6 justify-center">
-                  {[
-                    {
-                      Icon: FaReact,
-                      name: "React",
-                      color: "text-blue-500",
-                      years: 2,
-                      width: "80%",
-                    },
-                    {
-                      Icon: SiTailwindcss,
-                      name: "Tailwind CSS",
-                      color: "text-teal-400",
-                      years: 1,
-                      width: "50%",
-                    },
-                    {
-                      Icon: SiDjango,
-                      name: "Django",
-                      color: "text-green-500",
-                      years: 1,
-                      width: "50%",
-                    },
-                    {
-                      Icon: FaGitAlt,
-                      name: "Git",
-                      color: "text-orange-600",
-                      years: 4,
-                      width: "100%",
-                    },
-                  ].map(({ Icon, name, color, years, width }) => (
-                    <div className="group text-center" key={name}>
-                      <Icon
-                        className={`text-4xl ${color} mx-auto group-hover:scale-110 transition-transform`}
-                      />
-                      <p>{name}</p>
-                      <p className="text-sm text-gray-400">{years} years</p>
-                      <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <motion.div
-                          className={`absolute h-2 rounded-full ${color.replace(
-                            "text",
-                            "bg"
-                          )}`}
-                          initial={{ width: 0 }}
-                          animate={{ width }}
-                          transition={{ duration: 1 }}
-                        ></motion.div>
-                      </div>
+                  <div className="group text-center">
+                    <FaReact className="text-4xl text-blue-500 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>React</p>
+                    <p className="text-sm text-gray-400">2 years</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-blue-500 rounded-full"
+                        style={{ width: "80%" }}
+                      ></div>
                     </div>
-                  ))}
+                  </div>
+                  <div className="group text-center">
+                    <SiTailwindcss className="text-4xl text-teal-400 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>Tailwind CSS</p>
+                    <p className="text-sm text-gray-400">1 year</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-teal-400 rounded-full"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="group text-center">
+                    <SiDjango className="text-4xl text-green-500 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>Django</p>
+                    <p className="text-sm text-gray-400">1 year</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-green-500 rounded-full"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="group text-center">
+                    <FaGitAlt className="text-4xl text-orange-600 mx-auto group-hover:scale-110 transition-transform" />
+                    <p>Git</p>
+                    <p className="text-sm text-gray-400">4 years</p>
+                    <div className="relative w-4/5 mx-auto bg-gray-700 rounded-full h-2">
+                      <div
+                        className="absolute h-2 bg-orange-600 rounded-full"
+                        style={{ width: "100%" }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -224,7 +214,6 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </AnimatedSection>
-
       {/* Fun Facts Section */}
       <AnimatedSection id="fun">
         <div className="relative">

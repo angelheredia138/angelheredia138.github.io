@@ -178,6 +178,7 @@ button:focus-visible {
   --end-color: #d633ff;
   --blob-size: 200px;
   --start-top: 40%;
+  --start-left: -34%; /* Ensure blob starts in view */
   --animation-duration: 80s;
   animation: morph 5s ease-in-out infinite,
     moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
@@ -189,7 +190,7 @@ button:focus-visible {
   --end-color: #8e44ad;
   --blob-size: 250px;
   --start-top: 60%;
-  --start-left: 25%; /* Ensure blob starts in view */
+  --start-left: 115%; /* Ensure blob starts in view */
   animation: morph 5s ease-in-out infinite,
     moveRightToLeft var(--animation-duration, 90s) linear infinite alternate;
 }
@@ -200,7 +201,7 @@ button:focus-visible {
   --end-color: #ff512f;
   --blob-size: 220px;
   --start-top: 50%;
-  --start-left: 25%; /* Ensure blob starts in view */
+  --start-left: -34%; /* Ensure blob starts in view */
   --animation-duration: 100s;
   animation: morph 5s ease-in-out infinite,
     moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
@@ -212,7 +213,7 @@ button:focus-visible {
   --end-color: #00f6ff;
   --blob-size: 200px;
   --start-top: 70%;
-  --start-left: 75%; /* Ensure blob starts in view */
+  --start-left: 140%; /* Ensure blob starts in view */
   animation: morph 5s ease-in-out infinite,
     moveRightToLeft var(--animation-duration, 85s) linear infinite alternate;
 }
@@ -249,11 +250,12 @@ button:focus-visible {
 }
 /* Blobs in the Home Section */
 #skills .gooey {
-  --start-color: #3b0d63;
-  --end-color: #d633ff;
-  --blob-size: 200px;
-  --start-top: 40%;
-  --animation-duration: 80s;
+  --start-color: #5b247a;
+  --end-color: #ff512f;
+  --blob-size: 220px;
+  --start-top: 50%;
+  --start-left: -34%; /* Ensure blob starts in view */
+  --animation-duration: 100s;
   animation: morph 5s ease-in-out infinite,
     moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
 }
