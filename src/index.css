@@ -226,3 +226,34 @@ button:focus-visible {
     --start-top: 70%; /* Push blobs lower */
   }
 }
+/* Blobs in the Journey Section */
+#journey .gooey {
+  --start-color: #5b247a;
+  --end-color: #ff512f;
+  --blob-size: 220px;
+  --start-top: 50%;
+  --start-left: 25%; /* Ensure blob starts in view */
+  --animation-duration: 100s;
+  animation: morph 5s ease-in-out infinite,
+    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
+}
+/* Blobs in the Fun Section */
+#fun .gooey {
+  --start-color: #4b0082;
+  --end-color: #00f6ff;
+  --blob-size: 200px;
+  --start-top: 70%;
+  --start-left: 75%; /* Ensure blob starts in view */
+  animation: morph 5s ease-in-out infinite,
+    moveRightToLeft var(--animation-duration, 85s) linear infinite alternate;
+}
+/* Blobs in the Home Section */
+#skills .gooey {
+  --start-color: #3b0d63;
+  --end-color: #d633ff;
+  --blob-size: 200px;
+  --start-top: 40%;
+  --animation-duration: 80s;
+  animation: morph 5s ease-in-out infinite,
+    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
+}

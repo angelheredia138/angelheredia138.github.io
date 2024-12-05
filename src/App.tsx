@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection";
+import { Link } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
@@ -14,27 +15,28 @@ const App: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            My Portfolio
+            Angel-Heredia.com
           </motion.h1>
           <div>
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="mx-4 text-gray-400 hover:text-gray-200 transition"
             >
               About Me
-            </a>
-            <a
-              href="#projects"
+            </Link>
+            <Link
+              to="/Projects"
               className="mx-4 text-gray-400 hover:text-gray-200 transition"
             >
               Projects
-            </a>
-            <a
-              href="#contact"
+            </Link>
+
+            <Link
+              to="/contact"
               className="mx-4 text-gray-400 hover:text-gray-200 transition"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
@@ -52,12 +54,12 @@ const App: React.FC = () => {
               University. Here, you’ll find my latest projects, updates, and
               experience as I prepare for my career in tech.
             </p>
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="px-6 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </AnimatedSection>
