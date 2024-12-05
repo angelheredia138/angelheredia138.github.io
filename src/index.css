@@ -117,10 +117,11 @@ button:focus-visible {
   width: var(--blob-size, 150px);
   height: var(--blob-size, 150px);
   animation: morph 5s ease-in-out infinite,
-    moveInView var(--animation-duration, 60s) linear infinite alternate;
+    var(--animation-direction, moveLeftToRight) var(--animation-duration, 60s)
+      linear infinite alternate;
   will-change: border-radius, transform;
-  left: var(--start-left, 50%);
-  top: var(--start-top, 50%);
+  left: var(--start-left);
+  top: var(--start-top);
   transform: translateX(0); /* Start in view */
   box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease-in-out; /* Smooth transition */
@@ -170,92 +171,68 @@ button:focus-visible {
   }
 }
 
-/* Blobs Variants for Each Section */
+/* Section-Specific Blobs */
+#home .gooey,
+#about .gooey,
+#projects .gooey,
+#contact .gooey,
+#journey .gooey,
+#fun .gooey,
+#skills .gooey {
+  --start-color: #5b247a; /* Default start color */
+  --end-color: #ff512f; /* Default end color */
+  --blob-size: 200px;
+  --start-top: 50%; /* Default top position */
+  --animation-duration: 80s;
+}
 
-/* Blobs in the Home Section */
+/* Adjustments for Individual Sections */
 #home .gooey {
   --start-color: #3b0d63;
   --end-color: #d633ff;
-  --blob-size: 200px;
   --start-top: 40%;
-  --start-left: -34%; /* Ensure blob starts in view */
-  --animation-duration: 80s;
-  animation: morph 5s ease-in-out infinite,
-    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
 }
 
-/* Blobs in the About Section */
 #about .gooey {
   --start-color: #386fa7;
   --end-color: #8e44ad;
-  --blob-size: 250px;
   --start-top: 60%;
-  --start-left: 115%; /* Ensure blob starts in view */
-  animation: morph 5s ease-in-out infinite,
-    moveRightToLeft var(--animation-duration, 90s) linear infinite alternate;
 }
 
-/* Blobs in the Projects Section */
 #projects .gooey {
   --start-color: #5b247a;
   --end-color: #ff512f;
-  --blob-size: 220px;
   --start-top: 50%;
-  --start-left: -34%; /* Ensure blob starts in view */
+  --blob-size: 220px;
   --animation-duration: 100s;
-  animation: morph 5s ease-in-out infinite,
-    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
 }
 
-/* Blobs in the Contact Section */
 #contact .gooey {
   --start-color: #4b0082;
   --end-color: #00f6ff;
-  --blob-size: 200px;
   --start-top: 70%;
-  --start-left: 140%; /* Ensure blob starts in view */
-  animation: morph 5s ease-in-out infinite,
-    moveRightToLeft var(--animation-duration, 85s) linear infinite alternate;
+  --blob-size: 200px;
+  --animation-duration: 85s;
 }
-.gooey:hover {
-  box-shadow: 0 0 20px 5px var(--start-color), 0 0 30px 10px var(--end-color);
-  transition: all 0.3s ease-in-out;
-}
-@media (max-width: 768px) {
-  .gooey {
-    --blob-size: 120px;
-    --start-top: 70%; /* Push blobs lower */
-  }
-}
-/* Blobs in the Journey Section */
+
 #journey .gooey {
   --start-color: #5b247a;
   --end-color: #ff512f;
-  --blob-size: 220px;
   --start-top: 50%;
-  --start-left: 25%; /* Ensure blob starts in view */
+  --blob-size: 220px;
   --animation-duration: 100s;
-  animation: morph 5s ease-in-out infinite,
-    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
 }
-/* Blobs in the Fun Section */
+
 #fun .gooey {
   --start-color: #4b0082;
   --end-color: #00f6ff;
-  --blob-size: 200px;
   --start-top: 70%;
-  --start-left: 75%; /* Ensure blob starts in view */
-  animation: morph 5s ease-in-out infinite,
-    moveRightToLeft var(--animation-duration, 85s) linear infinite alternate;
 }
-/* Blobs in the Home Section */
+
 #skills .gooey {
   --start-color: #5b247a;
   --end-color: #ff512f;
-  --blob-size: 220px;
   --start-top: 50%;
-  --start-left: -34%; /* Ensure blob starts in view */
+  --blob-size: 220px;
   --animation-duration: 100s;
-  animation: morph 5s ease-in-out infinite,
-    moveLeftToRight var(--animation-duration, 90s) linear infinite alternate;
 }

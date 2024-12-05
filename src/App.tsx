@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection";
 import { Link } from "react-router-dom";
+import { updateBlobPositions } from "./components/bloblPositionRandomizer"; // Adjust the path based on your file structure
 
 const App: React.FC = () => {
+  useEffect(() => {
+    updateBlobPositions();
+  }, []);
   return (
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}

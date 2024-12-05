@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 import myFace from "../assets/my face.png";
 import { motion } from "framer-motion";
@@ -11,8 +11,12 @@ import {
   SiHtml5,
   SiPostgresql,
 } from "react-icons/si";
+import { updateBlobPositions } from "./bloblPositionRandomizer"; // Adjust the path based on your file structure
 
 const AboutPage: React.FC = () => {
+  useEffect(() => {
+    updateBlobPositions();
+  }, []);
   return (
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
