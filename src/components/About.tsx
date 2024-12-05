@@ -24,7 +24,9 @@ const AboutPage: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Angel-Heredia.com
+            <Link to="/" className="text-lg font-bold tracking-wide text-white">
+              Angel-Heredia.com
+            </Link>
           </motion.h1>
           <div>
             <Link
