@@ -11,7 +11,7 @@ import {
   SiHtml5,
   SiPostgresql,
 } from "react-icons/si";
-import { updateBlobPositions } from "./bloblPositionRandomizer"; // Adjust the path based on your file structure
+import { updateBlobPositions } from "./blobPositionRandomizer"; // Adjust the path based on your file structure
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -40,7 +40,7 @@ const AboutPage: React.FC = () => {
               About Me
             </Link>
             <Link
-              to="/Projects"
+              to="/Project"
               className="mx-4 text-gray-400 hover:text-gray-200 transition"
             >
               Projects

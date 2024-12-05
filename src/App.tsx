@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection";
 import { Link } from "react-router-dom";
-import { updateBlobPositions } from "./components/bloblPositionRandomizer"; // Adjust the path based on your file structure
+import { updateBlobPositions } from "./components/blobPositionRandomizer"; // Adjust the path based on your file structure
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -31,7 +31,7 @@ const App: React.FC = () => {
               About Me
             </Link>
             <Link
-              to="/Projects"
+              to="/project"
               className="mx-4 text-gray-400 hover:text-gray-200 transition"
             >
               Projects
