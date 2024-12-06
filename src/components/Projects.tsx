@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AnimatedSection from "./AnimatedSection";
+import AnimatedSection from "./ProjectAnimatedSection";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { updateBlobPositions } from "./blobPositionRandomizer";
@@ -52,7 +52,7 @@ const ProjectsPage: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div
-            className="glass-container max-w-4xl p-8 text-center mx-auto"
+            className="project-container max-w-4xl p-8 text-center mx-auto"
             style={{ background: "rgba(128, 90, 213, 0.4)" }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-white">
@@ -79,7 +79,7 @@ const ProjectsPage: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div
-            className="glass-container max-w-4xl p-8 text-center mx-auto"
+            className="project-container max-w-4xl p-8 text-center mx-auto"
             style={{ background: "rgba(0, 122, 255, 0.3)" }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-white">
@@ -106,7 +106,7 @@ const ProjectsPage: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div
-            className="glass-container max-w-4xl p-8 text-center mx-auto"
+            className="project-container max-w-4xl p-8 text-center mx-auto"
             style={{ background: "rgba(255, 102, 0, 0.3)" }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-white">
@@ -133,7 +133,7 @@ const ProjectsPage: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div
-            className="glass-container max-w-4xl p-8 text-center mx-auto"
+            className="project-container max-w-4xl p-8 text-center mx-auto"
             style={{ background: "rgba(50, 205, 50, 0.3)" }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-white">
@@ -152,7 +152,7 @@ const ProjectsPage: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div
-            className="glass-container max-w-4xl p-8 text-center mx-auto"
+            className="project-container max-w-4xl p-8 text-center mx-auto"
             style={{ background: "rgba(255, 165, 0, 0.3)" }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-white">
@@ -179,7 +179,7 @@ const ProjectsPage: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div
-            className="glass-container max-w-4xl p-8 text-center mx-auto"
+            className="project-container max-w-4xl p-8 text-center mx-auto"
             style={{ background: "rgba(70, 130, 180, 0.3)" }}
           >
             <h2 className="text-3xl font-semibold mb-4 text-white">

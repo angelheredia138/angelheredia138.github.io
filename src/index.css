@@ -96,7 +96,18 @@ button:focus-visible {
     inset 0 1px rgba(255, 255, 255, 0.1);
   padding: 2rem;
 }
-
+.project-container {
+  position: relative;
+  top: 180px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+}
 /* Project Card Styling */
 .project-card {
   background: white;
