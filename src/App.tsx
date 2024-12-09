@@ -1,6 +1,15 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection";
+import { FaPython, FaReact, FaGitAlt } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiDjango,
+  SiJavascript,
+  SiHtml5,
+  SiNuxtdotjs,
+  SiChakraui,
+} from "react-icons/si";
 import { Link } from "react-router-dom";
 import { updateBlobPositions } from "./components/blobPositionRandomizer"; // Adjust the path based on your file structure
 
@@ -86,14 +95,17 @@ const App: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      {/* Projects Section */}
       <AnimatedSection id="projects">
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div className="max-w-5xl p-8 text-center mx-auto">
             <h2 className="text-3xl font-semibold mb-6 text-white">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="glass-container">
+              {/* Spotify Playback Controller */}
+              <div
+                className="glass-container"
+                style={{ background: "rgba(128, 90, 213, 0.4)" }}
+              >
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Spotify Playback Controller
                 </h3>
@@ -101,21 +113,96 @@ const App: React.FC = () => {
                   A web app to control Spotify playback with authentication and
                   playlist features.
                 </p>
+                <Link
+                  to="/project#spotify-playback"
+                  className="text-purple-300 hover:underline font-bold"
+                >
+                  Learn More
+                </Link>
+                <div className="flex justify-center gap-4 my-4">
+                  <SiHtml5 className="text-orange-500 text-2xl" />
+                  <FaReact className="text-blue-500 text-2xl" />
+                  <SiJavascript className="text-yellow-300 text-2xl" />
+                  <FaPython className="text-yellow-400 text-2xl" />
+                </div>
+                <div className="flex justify-center gap-4 my-4">
+                  <SiDjango className="text-green-500 text-2xl" />
+                  <SiChakraui className="text-teal-500 text-2xl" />
+                  <FaGitAlt className="text-orange-600 text-2xl" />
+                </div>
               </div>
-              <div className="glass-container">
+
+              {/* Spotify Data Visualization */}
+              <div
+                className="glass-container"
+                style={{ background: "rgba(0, 122, 255, 0.3)" }}
+              >
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Spotify Data Visualization
                 </h3>
                 <p>
-                  Interactive data visualizations to explore Spotify listening
-                  habits.
+                  A web app to with interactive data visualizations to explore
+                  Spotify listening habits.
                 </p>
+                <Link
+                  to="/project#spotify-data-viz"
+                  className="text-blue-300 hover:underline font-bold"
+                >
+                  Learn More
+                </Link>
+                <div className="flex justify-center gap-4 my-4">
+                  <SiHtml5 className="text-orange-500 text-2xl" />
+                  <FaReact className="text-blue-500 text-2xl" />
+                  <SiJavascript className="text-yellow-300 text-2xl" />
+                  <FaPython className="text-yellow-400 text-2xl" />
+                </div>
+                <div className="flex justify-center gap-4 my-4">
+                  <SiDjango className="text-green-500 text-2xl" />
+                  <SiNuxtdotjs className="text-green-500 text-2xl" />
+                  <SiChakraui className="text-teal-500 text-2xl" />
+                  <FaGitAlt className="text-orange-600 text-2xl" />
+                </div>
               </div>
-              <div className="glass-container">
+
+              {/* Portfolio Website */}
+              <div
+                className="glass-container"
+                style={{ background: "rgba(255, 102, 0, 0.3)" }}
+              >
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Portfolio Website
                 </h3>
                 <p>A showcase of my work, featuring a sleek, modern design.</p>
+                <Link
+                  to="/project#portfolio-website"
+                  className="text-orange-300 hover:underline font-bold"
+                >
+                  Learn More
+                </Link>
+                <div className="flex justify-center gap-4 my-4">
+                  <SiHtml5 className="text-orange-500 text-2xl" />
+                  <FaReact className="text-blue-500 text-2xl" />
+                  <SiJavascript className="text-yellow-300 text-2xl" />
+                  <SiChakraui className="text-teal-500 text-2xl" />
+                </div>
+                <div className="flex justify-center gap-4 my-4">
+                  <SiTailwindcss className="text-teal-400 text-2xl" />
+                  <FaGitAlt className="text-orange-600 text-2xl" />
+                </div>
+              </div>
+
+              {/* Many More */}
+              <div className="glass-container bg-gray-700 lg:col-span-3 md:col-span-2">
+                <h3 className="text-lg font-bold mb-2 text-white">
+                  And Many More...!
+                </h3>
+                <p>
+                  Check out my{" "}
+                  <Link to="/project" className="text-blue-400 hover:underline">
+                    projects page
+                  </Link>{" "}
+                  for a full list of exciting projects I've worked on.
+                </p>
               </div>
             </div>
           </div>

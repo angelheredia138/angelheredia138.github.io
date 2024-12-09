@@ -228,8 +228,8 @@ button:focus-visible {
 #projects .gooey {
   --start-color: #ff7e5f; /* Warm coral */
   --end-color: #feb47b; /* Peach */
-  --start-top: 50%;
-  --blob-size: 250px;
+  --start-top: 0%;
+  --blob-size: 230px;
   --animation-duration: 95s;
 }
 

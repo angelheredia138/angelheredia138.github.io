@@ -2,6 +2,17 @@ import React, { useEffect } from "react";
 import AnimatedSection from "./ProjectAnimatedSection";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaPython, FaReact, FaGitAlt } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiDjango,
+  SiJavascript,
+  SiHtml5,
+  SiNuxtdotjs,
+  SiChakraui,
+  SiSwift,
+} from "react-icons/si";
+import { DiUnitySmall } from "react-icons/di"; // Unity icon
 import { updateBlobPositions } from "./blobPositionRandomizer";
 
 const ProjectsPage: React.FC = () => {
@@ -59,9 +70,21 @@ const ProjectsPage: React.FC = () => {
               Spotify Playback Controller
             </h2>
             <p className="text-lg mb-6">
-              A web app to control Spotify playback with authentication,
-              playlist features, and a user-friendly interface.
+              This project was inspired by a need for seamless Spotify control
+              during gaming. Designed for integration with a Raspberry Pi 4
+              connected to a touchscreen, it provides an intuitive interface to
+              skip, pause, play, and manage playlists without disrupting your
+              workflow or gameplay.
             </p>
+            <div className="flex justify-center gap-4 my-4">
+              <SiHtml5 className="text-orange-500 text-2xl" />
+              <FaReact className="text-blue-500 text-2xl" />
+              <SiJavascript className="text-yellow-300 text-2xl" />
+              <FaPython className="text-yellow-400 text-2xl" />
+              <SiDjango className="text-green-500 text-2xl" />
+              <SiChakraui className="text-teal-500 text-2xl" />
+              <FaGitAlt className="text-orange-600 text-2xl" />
+            </div>
             <a
               href="https://github.com/angelheredia138/spotify-playback-control-public"
               target="_blank"
@@ -89,6 +112,16 @@ const ProjectsPage: React.FC = () => {
               Interactive data visualizations to explore Spotify listening
               habits, featuring Wrapped-style scrolling and D3.js charts.
             </p>
+            <div className="flex justify-center gap-4 my-4">
+              <SiHtml5 className="text-orange-500 text-2xl" />
+              <FaReact className="text-blue-500 text-2xl" />
+              <SiJavascript className="text-yellow-300 text-2xl" />
+              <FaPython className="text-yellow-400 text-2xl" />
+              <SiDjango className="text-green-500 text-2xl" />
+              <SiNuxtdotjs className="text-green-500 text-2xl" />
+              <SiChakraui className="text-teal-500 text-2xl" />
+              <FaGitAlt className="text-orange-600 text-2xl" />
+            </div>
             <a
               href="https://angel-heredia.com/spotify-visualizer-frontend"
               target="_blank"
@@ -116,6 +149,14 @@ const ProjectsPage: React.FC = () => {
               A personal portfolio showcasing my projects and experience, built
               with React, TypeScript, and Tailwind CSS.
             </p>
+            <div className="flex justify-center gap-4 my-4">
+              <SiHtml5 className="text-orange-500 text-2xl" />
+              <FaReact className="text-blue-500 text-2xl" />
+              <SiJavascript className="text-yellow-300 text-2xl" />
+              <SiChakraui className="text-teal-500 text-2xl" />
+              <SiTailwindcss className="text-teal-400 text-2xl" />
+              <FaGitAlt className="text-orange-600 text-2xl" />
+            </div>
             <a
               href="https://github.com/angelheredia138"
               target="_blank"
@@ -143,6 +184,10 @@ const ProjectsPage: React.FC = () => {
               An AR app analyzing attention patterns in museum visitors using
               Unity and eye-tracking technology.
             </p>
+            <div className="flex justify-center gap-4 my-4">
+              <DiUnitySmall className="text-gray-300 text-2xl" />
+              <FaGitAlt className="text-orange-600 text-2xl" />
+            </div>
           </div>
         </div>
       </AnimatedSection>
@@ -162,6 +207,11 @@ const ProjectsPage: React.FC = () => {
               Classic games like 2048, Pong, Snake, and Minesweeper recreated
               using React for nostalgic fun.
             </p>
+            <div className="flex justify-center gap-4 my-4">
+              <FaReact className="text-blue-500 text-2xl" />
+              <SiJavascript className="text-yellow-300 text-2xl" />
+              <FaGitAlt className="text-orange-600 text-2xl" />
+            </div>
             <a
               href="https://github.com/angelheredia138/retro-games-in-javascript"
               target="_blank"
@@ -189,6 +239,9 @@ const ProjectsPage: React.FC = () => {
               A SwiftUI app for managing your wardrobe and suggesting outfits
               based on live weather conditions.
             </p>
+            <div className="flex justify-center gap-4 my-4">
+              <SiSwift className="text-orange-500 text-2xl" />
+            </div>
             <a
               href="https://github.com/angelheredia138/wardrobe-app"
               target="_blank"
