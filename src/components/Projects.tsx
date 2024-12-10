@@ -27,12 +27,26 @@ const ProjectsPage: React.FC = () => {
       <header className="fixed w-full bg-black bg-opacity-50 shadow-md z-50">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <motion.h1
-            className="text-lg font-bold tracking-wide text-white"
+            className="text-lg font-bold tracking-wide text-white flex items-center"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link to="/" className="text-lg font-bold tracking-wide text-white">
+            <Link
+              to="/"
+              className="flex items-center text-lg font-bold tracking-wide text-white"
+            >
+              <span className="mr-2">
+                {/* Home Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5"
+                >
+                  <path d="M10 20v-6h4v6a2 2 0 002 2h4a2 2 0 002-2v-8h1.293a1 1 0 00.707-1.707l-10-10a1 1 0 00-1.414 0l-10 10A1 1 0 003.293 12H4v8a2 2 0 002 2h4a2 2 0 002-2z" />
+                </svg>
+              </span>
               Angel-Heredia.com
             </Link>
           </motion.h1>
@@ -44,7 +58,7 @@ const ProjectsPage: React.FC = () => {
               About Me
             </Link>
             <Link
-              to="/projects"
+              to="/project"
               className="mx-4 text-gray-400 hover:text-gray-200 transition"
             >
               Projects
