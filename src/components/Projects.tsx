@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AnimatedSection from "./ProjectAnimatedSection";
 import { motion } from "framer-motion";
 import RetroGames from "../assets/retro games.png";
@@ -8,7 +8,6 @@ import {
   SiTailwindcss,
   SiDjango,
   SiJavascript,
-  SiHtml5,
   SiNuxtdotjs,
   SiChakraui,
   SiSwift,
@@ -17,6 +16,8 @@ import { DiUnitySmall } from "react-icons/di"; // Unity icon
 import { updateBlobPositions } from "./blobPositionRandomizer";
 
 const ProjectsPage: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     updateBlobPositions();
   }, []);
@@ -24,53 +25,77 @@ const ProjectsPage: React.FC = () => {
   return (
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
-      <header className="fixed w-full bg-black bg-opacity-50 shadow-md z-50">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <header className="fixed bg-black bg-opacity-50 shadow-md z-50 w-full">
+        <nav className="container px-4 py-4 flex justify-between items-center">
+          {/* Website Name */}
           <motion.h1
             className="text-lg font-bold tracking-wide text-white flex items-center"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link
-              to="/"
-              className="flex items-center text-lg font-bold tracking-wide text-white"
-            >
-              <span className="mr-2">
-                {/* Home Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                >
-                  <path d="M10 20v-6h4v6a2 2 0 002 2h4a2 2 0 002-2v-8h1.293a1 1 0 00.707-1.707l-10-10a1 1 0 00-1.414 0l-10 10A1 1 0 003.293 12H4v8a2 2 0 002 2h4a2 2 0 002-2z" />
-                </svg>
-              </span>
-              Angel-Heredia.com
+            <Link to="/" className="flex items-center">
+              angel-heredia.com
             </Link>
           </motion.h1>
-          <div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="text-white focus:outline-none md:hidden"
+          >
+            {isMenuOpen ? "Close" : "navigate"}
+          </button>
+
+          {/* Regular Navbar Links */}
+          <div className="hidden md:flex space-x-4">
             <Link
               to="/about"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              About Me
+              about
             </Link>
             <Link
               to="/project"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Projects
+              projects
             </Link>
             <Link
               to="/contact"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Contact
+              contact
             </Link>
           </div>
         </nav>
+
+        {/* Dropdown Menu for Mobile */}
+        {isMenuOpen && (
+          <div className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden">
+            <Link
+              to="/about"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              about
+            </Link>
+            <Link
+              to="/project"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              projects
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              contact
+            </Link>
+          </div>
+        )}
       </header>
 
       {/* Spotify Playback Controller */}
@@ -81,7 +106,7 @@ const ProjectsPage: React.FC = () => {
             {/* Project Description */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
-              style={{ background: "rgba(128, 90, 213, 0.4)" }}
+              style={{ background: "rgba(128, 90, 213, 0.2)" }}
             >
               <h2 className="text-3xl font-semibold mb-4 text-white">
                 Spotify Playback Controller
@@ -94,7 +119,6 @@ const ProjectsPage: React.FC = () => {
                 your workflow or gameplay.
               </p>
               <div className="flex justify-start gap-4 my-4">
-                <SiHtml5 className="text-orange-500 text-2xl" />
                 <FaReact className="text-blue-500 text-2xl" />
                 <SiJavascript className="text-yellow-300 text-2xl" />
                 <FaPython className="text-yellow-400 text-2xl" />
@@ -114,7 +138,7 @@ const ProjectsPage: React.FC = () => {
             {/* Demo/Screenshot */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
-              style={{ background: "rgba(128, 90, 213, 0.4)" }}
+              style={{ background: "rgba(128, 90, 213, 0.2)" }}
             >
               <iframe
                 className="w-full h-72 rounded-lg shadow-lg"
@@ -135,7 +159,7 @@ const ProjectsPage: React.FC = () => {
             {/* Project Description */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
-              style={{ background: "rgba(0, 122, 255, 0.3)" }}
+              style={{ background: "rgba(0, 122, 255, 0.2)" }}
             >
               <h2 className="text-3xl font-semibold mb-4 text-white">
                 Spotify Data Visualization
@@ -155,7 +179,6 @@ const ProjectsPage: React.FC = () => {
                 !
               </p>
               <div className="flex justify-start gap-4 my-4">
-                <SiHtml5 className="text-orange-500 text-2xl" />
                 <FaReact className="text-blue-500 text-2xl" />
                 <SiJavascript className="text-yellow-300 text-2xl" />
                 <FaPython className="text-yellow-400 text-2xl" />
@@ -176,7 +199,7 @@ const ProjectsPage: React.FC = () => {
             {/* Demo/Screenshot */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
-              style={{ background: "rgba(0, 122, 255, 0.3)" }}
+              style={{ background: "rgba(0, 122, 255, 0.2)" }}
             >
               <div className="w-full aspect-w-16 aspect-h-9">
                 <iframe
@@ -199,7 +222,7 @@ const ProjectsPage: React.FC = () => {
             {/* Project Description */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
-              style={{ background: "rgba(255, 102, 0, 0.3)" }}
+              style={{ background: "rgba(255, 102, 0, 0.2)" }}
             >
               <h2 className="text-3xl font-semibold mb-4 text-white">
                 Portfolio Website
@@ -209,7 +232,6 @@ const ProjectsPage: React.FC = () => {
                 built with React, TypeScript, and Tailwind CSS.
               </p>
               <div className="flex justify-start gap-4 my-4">
-                <SiHtml5 className="text-orange-500 text-2xl" />
                 <FaReact className="text-blue-500 text-2xl" />
                 <SiJavascript className="text-yellow-300 text-2xl" />
                 <SiChakraui className="text-teal-500 text-2xl" />
@@ -217,7 +239,7 @@ const ProjectsPage: React.FC = () => {
                 <FaGitAlt className="text-orange-600 text-2xl" />
               </div>
               <a
-                href="https://github.com/angelheredia138"
+                href="https://github.com/angelheredia138/angelheredia138.github.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-300 transition"
@@ -228,7 +250,7 @@ const ProjectsPage: React.FC = () => {
             {/* Demo/Screenshot */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
-              style={{ background: "rgba(255, 102, 0, 0.3)" }}
+              style={{ background: "rgba(255, 102, 0, 0.2)" }}
             >
               <iframe
                 className="w-full h-96 rounded-lg shadow-lg"
@@ -249,7 +271,7 @@ const ProjectsPage: React.FC = () => {
             {/* Project Description */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
-              style={{ background: "rgba(50, 205, 50, 0.3)" }}
+              style={{ background: "rgba(50, 205, 50, 0.2)" }}
             >
               <h2 className="text-3xl font-semibold mb-4 text-white">
                 AR Attention Analysis App
@@ -270,7 +292,7 @@ const ProjectsPage: React.FC = () => {
             {/* Demo/Screenshot */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
-              style={{ background: "rgba(50, 205, 50, 0.3)" }}
+              style={{ background: "rgba(50, 205, 50, 0.2)" }}
             >
               <p className="text-red-300 text-xl font-semibold text-center">
                 Unable to show demonstration as it is a school project.
@@ -288,7 +310,7 @@ const ProjectsPage: React.FC = () => {
             {/* Project Description */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
-              style={{ background: "rgba(255, 165, 0, 0.3)" }}
+              style={{ background: "rgba(255, 165, 0, 0.2)" }}
             >
               <h2 className="text-3xl font-semibold mb-4 text-white">
                 Retro Games in JavaScript
@@ -313,8 +335,8 @@ const ProjectsPage: React.FC = () => {
             </div>
             {/* Screenshot */}
             <div
-              className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
-              style={{ background: "rgba(255, 165, 0, 0.3)" }}
+              className="retro-container p-6 rounded-lg shadow-lg flex justify-center items-center"
+              style={{ background: "rgba(255, 165, 0, 0.2)" }}
             >
               <a
                 href="https://angel-heredia.com/retro-games-in-javascript/"
@@ -340,7 +362,7 @@ const ProjectsPage: React.FC = () => {
             {/* Project Description */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
-              style={{ background: "rgba(70, 130, 180, 0.3)" }}
+              style={{ background: "rgba(70, 130, 180, 0.2)" }}
             >
               <h2 className="text-3xl font-semibold mb-4 text-white">
                 Wardrobe App
@@ -364,7 +386,7 @@ const ProjectsPage: React.FC = () => {
             {/* Demo/Screenshot */}
             <div
               className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
-              style={{ background: "rgba(70, 130, 180, 0.3)" }}
+              style={{ background: "rgba(70, 130, 180, 0.2)" }}
             >
               <iframe
                 className="w-full h-72 rounded-lg shadow-lg"

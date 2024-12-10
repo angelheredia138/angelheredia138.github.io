@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import myFace from "../assets/my face.png";
 import { motion } from "framer-motion";
@@ -14,59 +14,85 @@ import {
 import { updateBlobPositions } from "./blobPositionRandomizer"; // Adjust the path based on your file structure
 
 const AboutPage: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     updateBlobPositions();
   }, []);
   return (
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
-      <header className="fixed w-full bg-black bg-opacity-50 shadow-md z-50">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <header className="fixed bg-black bg-opacity-50 shadow-md z-50 w-full">
+        <nav className="container px-4 py-4 flex justify-between items-center">
+          {/* Website Name */}
           <motion.h1
             className="text-lg font-bold tracking-wide text-white flex items-center"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link
-              to="/"
-              className="flex items-center text-lg font-bold tracking-wide text-white"
-            >
-              <span className="mr-2">
-                {/* Home Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                >
-                  <path d="M10 20v-6h4v6a2 2 0 002 2h4a2 2 0 002-2v-8h1.293a1 1 0 00.707-1.707l-10-10a1 1 0 00-1.414 0l-10 10A1 1 0 003.293 12H4v8a2 2 0 002 2h4a2 2 0 002-2z" />
-                </svg>
-              </span>
-              Angel-Heredia.com
+            <Link to="/" className="flex items-center">
+              angel-heredia.com
             </Link>
           </motion.h1>
-          <div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="text-white focus:outline-none md:hidden"
+          >
+            {isMenuOpen ? "Close" : "navigate"}
+          </button>
+
+          {/* Regular Navbar Links */}
+          <div className="hidden md:flex space-x-4">
             <Link
               to="/about"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              About Me
+              about
             </Link>
             <Link
               to="/project"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Projects
+              projects
             </Link>
             <Link
               to="/contact"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Contact
+              contact
             </Link>
           </div>
         </nav>
+
+        {/* Dropdown Menu for Mobile */}
+        {isMenuOpen && (
+          <div className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden">
+            <Link
+              to="/about"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              about
+            </Link>
+            <Link
+              to="/project"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              projects
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              contact
+            </Link>
+          </div>
+        )}
       </header>
 
       {/* About Header */}
@@ -88,7 +114,7 @@ const AboutPage: React.FC = () => {
             <img
               src={myFace}
               alt="Angel Heredia"
-              className="w-40 h-40 rounded-full mx-auto border-4 border-purple-600 shadow-lg transition-transform transform hover:scale-110"
+              className="w-43 h-40 rounded-full mx-auto border-4 border-purple-600 shadow-lg transition-transform transform hover:scale-110"
             />
           </div>
         </div>

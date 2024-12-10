@@ -6,6 +6,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const ContactPage: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [captchaValid, setCaptchaValid] = useState(false);
 
   const handleCaptchaChange = (value: string | null) => {
@@ -19,53 +21,77 @@ const ContactPage: React.FC = () => {
   return (
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
-      <header className="fixed w-full bg-black bg-opacity-50 shadow-md z-50">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <header className="fixed bg-black bg-opacity-50 shadow-md z-50 w-full">
+        <nav className="container px-4 py-4 flex justify-between items-center">
+          {/* Website Name */}
           <motion.h1
             className="text-lg font-bold tracking-wide text-white flex items-center"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link
-              to="/"
-              className="flex items-center text-lg font-bold tracking-wide text-white"
-            >
-              <span className="mr-2">
-                {/* Home Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                >
-                  <path d="M10 20v-6h4v6a2 2 0 002 2h4a2 2 0 002-2v-8h1.293a1 1 0 00.707-1.707l-10-10a1 1 0 00-1.414 0l-10 10A1 1 0 003.293 12H4v8a2 2 0 002 2h4a2 2 0 002-2z" />
-                </svg>
-              </span>
-              Angel-Heredia.com
+            <Link to="/" className="flex items-center">
+              angel-heredia.com
             </Link>
           </motion.h1>
-          <div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="text-white focus:outline-none md:hidden"
+          >
+            {isMenuOpen ? "Close" : "navigate"}
+          </button>
+
+          {/* Regular Navbar Links */}
+          <div className="hidden md:flex space-x-4">
             <Link
               to="/about"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              About Me
+              about
             </Link>
             <Link
               to="/project"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Projects
+              projects
             </Link>
             <Link
               to="/contact"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Contact
+              contact
             </Link>
           </div>
         </nav>
+
+        {/* Dropdown Menu for Mobile */}
+        {isMenuOpen && (
+          <div className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden">
+            <Link
+              to="/about"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              about
+            </Link>
+            <Link
+              to="/project"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              projects
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              contact
+            </Link>
+          </div>
+        )}
       </header>
 
       {/* Contact Section */}
@@ -74,7 +100,7 @@ const ContactPage: React.FC = () => {
           <div className="gooey section-blob"></div>
 
           {/* Social Media Links */}
-          <div className="flex justify-center gap-8 mb-8">
+          <div className="flex justify-center gap-8 m-4">
             <a
               href="https://www.linkedin.com/in/herediafangel"
               target="_blank"
@@ -100,20 +126,16 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Resume Section */}
-          <div className="flex justify-center items-center min-h-screen">
+          <div className="flex justify-center items-center pb-10">
             <div className="glass-container max-w-6xl p-10 text-center">
               <h2 className="text-4xl font-semibold mb-6 text-white">
                 My Resume
               </h2>
               <iframe
-                style={{
-                  width: "600px",
-                  height: "800px",
-                  border: "none",
-                  borderRadius: "16px",
-                }}
+                className="responsive-iframe"
                 src="https://drive.google.com/file/d/1gbb_tn8U5nGCmtv3xNW-Tam0zdH0yjiX/preview?usp=drivesdk"
               ></iframe>
+
               <p className="text-lg mt-6">
                 You can also download my resume{" "}
                 <a
@@ -194,10 +216,12 @@ const ContactPage: React.FC = () => {
               </div>
 
               {/* Google reCAPTCHA */}
-              <ReCAPTCHA
-                sitekey="6Lf7K5cqAAAAABUl34eg3Fx-bLf8SSeZ4FZxljab"
-                onChange={handleCaptchaChange}
-              />
+              <div className="recaptcha-container">
+                <ReCAPTCHA
+                  sitekey="6Lf7K5cqAAAAABUl34eg3Fx-bLf8SSeZ4FZxljab"
+                  onChange={handleCaptchaChange}
+                />
+              </div>
 
               <button
                 type="submit"

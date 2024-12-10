@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection";
 import { FaPython, FaReact, FaGitAlt } from "react-icons/fa";
@@ -14,59 +14,86 @@ import { Link } from "react-router-dom";
 import { updateBlobPositions } from "./components/blobPositionRandomizer"; // Adjust the path based on your file structure
 
 const App: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     updateBlobPositions();
   }, []);
+
   return (
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
-      <header className="fixed w-full bg-black bg-opacity-50 shadow-md z-50">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <header className="fixed bg-black bg-opacity-50 shadow-md z-50 w-full">
+        <nav className="container px-4 py-4 flex justify-between items-center">
+          {/* Website Name */}
           <motion.h1
             className="text-lg font-bold tracking-wide text-white flex items-center"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link
-              to="/"
-              className="flex items-center text-lg font-bold tracking-wide text-white"
-            >
-              <span className="mr-2">
-                {/* Home Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                >
-                  <path d="M10 20v-6h4v6a2 2 0 002 2h4a2 2 0 002-2v-8h1.293a1 1 0 00.707-1.707l-10-10a1 1 0 00-1.414 0l-10 10A1 1 0 003.293 12H4v8a2 2 0 002 2h4a2 2 0 002-2z" />
-                </svg>
-              </span>
-              Angel-Heredia.com
+            <Link to="/" className="flex items-center">
+              angel-heredia.com
             </Link>
           </motion.h1>
-          <div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="text-white focus:outline-none md:hidden"
+          >
+            {isMenuOpen ? "Close" : "navigate"}
+          </button>
+
+          {/* Regular Navbar Links */}
+          <div className="hidden md:flex space-x-4">
             <Link
               to="/about"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              About Me
+              about
             </Link>
             <Link
               to="/project"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Projects
+              projects
             </Link>
             <Link
               to="/contact"
-              className="mx-4 text-gray-400 hover:text-gray-200 transition"
+              className="text-gray-400 hover:text-gray-200 transition"
             >
-              Contact
+              contact
             </Link>
           </div>
         </nav>
+
+        {/* Dropdown Menu for Mobile */}
+        {isMenuOpen && (
+          <div className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden">
+            <Link
+              to="/about"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              about
+            </Link>
+            <Link
+              to="/project"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              projects
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-400 hover:text-gray-200 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              contact
+            </Link>
+          </div>
+        )}
       </header>
 
       {/* Home Section */}
@@ -82,12 +109,9 @@ const App: React.FC = () => {
               University. Here, you’ll find my latest projects, updates, and
               experience as I prepare for my career in tech.
             </p>
-            <Link
-              to="/about"
-              className="px-6 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition"
-            >
-              Learn More
-            </Link>
+            <p className="text-lg font-medium text-white">
+              Scroll down to learn some more about me!
+            </p>
           </div>
         </div>
       </AnimatedSection>
@@ -98,12 +122,18 @@ const App: React.FC = () => {
           <div className="gooey section-blob"></div>
           <div className="glass-container max-w-4xl p-8 text-center mx-auto">
             <h2 className="text-3xl font-semibold mb-4 text-white">About Me</h2>
-            <p>
+            <p className="mb-6">
               I’m passionate about building impactful software and constantly
               growing as a developer. With graduation in 2025, I’m excited to
               begin my career and take on challenges in full-stack development
               and data visualization.
             </p>
+            <Link
+              to="/about"
+              className="px-6 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition"
+            >
+              Learn More
+            </Link>
           </div>
         </div>
       </AnimatedSection>
@@ -117,7 +147,7 @@ const App: React.FC = () => {
               {/* Spotify Playback Controller */}
               <div
                 className="glass-container"
-                style={{ background: "rgba(128, 90, 213, 0.4)" }}
+                style={{ background: "rgba(128, 90, 213, 0.2)" }}
               >
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Spotify Playback Controller
@@ -148,7 +178,7 @@ const App: React.FC = () => {
               {/* Spotify Data Visualization */}
               <div
                 className="glass-container"
-                style={{ background: "rgba(0, 122, 255, 0.3)" }}
+                style={{ background: "rgba(0, 122, 255, 0.2)" }}
               >
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Spotify Data Visualization
@@ -180,7 +210,7 @@ const App: React.FC = () => {
               {/* Portfolio Website */}
               <div
                 className="glass-container"
-                style={{ background: "rgba(255, 102, 0, 0.3)" }}
+                style={{ background: "rgba(255, 102, 0, 0.2)" }}
               >
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Portfolio Website
@@ -233,11 +263,18 @@ const App: React.FC = () => {
               say hello, feel free to reach out.
             </p>
             <a
-              href="mailto:herediafangel@gmail.com.com"
-              className="px-6 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition"
+              href="mailto:herediafangel@gmail.com"
+              className="px-6 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition block mb-4"
             >
               Email Me
             </a>
+            <p className="text-lg">
+              Or{" "}
+              <Link to="/contact" className="text-purple-400 hover:underline">
+                check out my contact page
+              </Link>{" "}
+              to see my resume and write a message for me!
+            </p>
           </div>
         </div>
       </AnimatedSection>
