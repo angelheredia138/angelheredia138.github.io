@@ -68,7 +68,13 @@ const ContactPage: React.FC = () => {
 
         {/* Dropdown Menu for Mobile */}
         {isMenuOpen && (
-          <div className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden"
+          >
             <Link
               to="/about"
               className="text-gray-400 hover:text-gray-200 transition"
@@ -90,7 +96,7 @@ const ContactPage: React.FC = () => {
             >
               contact
             </Link>
-          </div>
+          </motion.div>
         )}
       </header>
 

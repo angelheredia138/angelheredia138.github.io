@@ -69,7 +69,13 @@ const AboutPage: React.FC = () => {
 
         {/* Dropdown Menu for Mobile */}
         {isMenuOpen && (
-          <div className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="bg-black bg-opacity-75 text-white flex flex-col items-center py-4 space-y-2 md:hidden"
+          >
             <Link
               to="/about"
               className="text-gray-400 hover:text-gray-200 transition"
@@ -91,7 +97,7 @@ const AboutPage: React.FC = () => {
             >
               contact
             </Link>
-          </div>
+          </motion.div>
         )}
       </header>
 
@@ -104,12 +110,10 @@ const AboutPage: React.FC = () => {
               About Me
             </h1>
             <p className="text-lg mb-6">
-              Hello! I’m Angel Heredia, a Computer Science student at Arizona
-              State University, graduating in 2025. I’ve found my passion in web
-              development because it lets me express my creativity while
-              building sleek and meaningful user experiences. From coding
-              intuitive interfaces to experimenting with cool designs, I love
-              bringing ideas to life on the web!
+              Hi! I’m a Computer Science student at ASU, graduating in 2025.
+              I’ve found my passion in web development because it lets me
+              express my creativity while building sick and meaningful user
+              experiences. I love being able to mix creativity with technology!
             </p>
             <img
               src={myFace}
