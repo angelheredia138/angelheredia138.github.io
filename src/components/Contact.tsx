@@ -22,7 +22,7 @@ const ContactPage: React.FC = () => {
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
       <header className="fixed bg-black bg-opacity-50 shadow-md z-50 w-full">
-        <nav className="container px-4 py-4 flex justify-between items-center">
+        <nav className=" px-10 py-4 flex justify-between items-center ml-auto">
           {/* Website Name */}
           <motion.h1
             className="text-lg font-bold tracking-wide text-white flex items-center"

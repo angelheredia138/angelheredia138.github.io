@@ -343,16 +343,15 @@ button:focus-visible {
   /* Project container adjustments */
   .project-container {
     margin-top: 8rem; /* Add 5rem top margin for mobile */
-    display: flex;
     flex-direction: column; /* Stack the items vertically */
     gap: 1.5rem; /* Add spacing between stacked items */
     padding: 1rem; /* Adjust padding for smaller screens */
   }
   /* Glass containers adjustments */
   .glass-container {
-    width: 75%; /* Ensure it doesn't touch the edges */
+    width: 90%; /* Ensure it doesn't touch the edges */
     margin: 0 auto; /* Center the container */
-    padding: 1.5em; /* Reduce padding for mobile */
+    padding: 1em; /* Reduce padding for mobile */
     backdrop-filter: blur(5px); /* Reduce blur intensity for mobile */
     -webkit-backdrop-filter: blur(5px);
   }

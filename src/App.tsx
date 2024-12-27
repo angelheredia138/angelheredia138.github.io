@@ -24,7 +24,7 @@ const App: React.FC = () => {
     <div className="font-sans text-gray-300 relative">
       {/* Navbar */}
       <header className="fixed bg-black bg-opacity-50 shadow-md z-50 w-full">
-        <nav className="container px-4 py-4 flex justify-between items-center">
+        <nav className=" px-10 py-4 flex justify-between items-center ml-auto">
           {/* Website Name */}
           <motion.h1
             className="text-lg font-bold tracking-wide text-white flex items-center"
@@ -107,7 +107,7 @@ const App: React.FC = () => {
         <div className="relative">
           <div className="gooey section-blob"></div>
           <div className="glass-container max-w-3xl p-8 text-center mx-auto">
-            <h1 className="text-5xl font-extrabold mb-4 text-white">
+            <h1 className="text-5xl font-bold mb-4 text-white">
               Welcome to My Portfolio
             </h1>
             <p className="text-lg mb-6">
