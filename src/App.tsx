@@ -9,6 +9,8 @@ import {
   SiHtml5,
   SiNuxtdotjs,
   SiChakraui,
+  SiDotnet,
+  SiVuedotjs,
 } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { updateBlobPositions } from "./components/blobPositionRandomizer"; // Adjust the path based on your file structure
@@ -150,34 +152,34 @@ const App: React.FC = () => {
           <div className="max-w-5xl p-8 text-center mx-auto">
             <h2 className="text-3xl font-semibold mb-6 text-white">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Spotify Playback Controller */}
+              {/* Valorant Franchising Database/API */}
               <div
                 className="glass-container"
-                style={{ background: "rgba(128, 90, 213, 0.2)" }}
+                style={{ background: "rgba(253, 8, 28, 0.2)" }}
               >
                 <h3 className="text-lg font-bold mb-2 text-white">
-                  Spotify Playback Controller
+                  Valorant Franchising Database/API
                 </h3>
                 <p>
-                  A web app to control Spotify playback with authentication and
-                  playlist features.
+                  A web app and API designed to provide a centralized hub of
+                  information about the franchised teams, players, and regions
+                  in VALORANT.
                 </p>
                 <Link
-                  to="/project#spotify-playback"
-                  className="text-purple-300 hover:underline font-bold"
+                  to="/project#vlr-database"
+                  className="text-red-300 hover:underline font-bold"
                 >
                   Learn More
                 </Link>
                 <div className="flex justify-center gap-4 my-4">
-                  <SiHtml5 className="text-orange-500 text-2xl" />
-                  <FaReact className="text-blue-500 text-2xl" />
+                  <SiVuedotjs className="text-green-500 text-2xl" />
+                  <SiDotnet className="text-purple-700 text-2xl" />
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+                    alt="Azure Logo"
+                    className="w-6 h-6"
+                  />
                   <SiJavascript className="text-yellow-300 text-2xl" />
-                  <FaPython className="text-yellow-400 text-2xl" />
-                </div>
-                <div className="flex justify-center gap-4 my-4">
-                  <SiDjango className="text-green-500 text-2xl" />
-                  <SiChakraui className="text-teal-500 text-2xl" />
-                  <FaGitAlt className="text-orange-600 text-2xl" />
                 </div>
               </div>
 

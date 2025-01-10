@@ -7,6 +7,8 @@ import { FaPython, FaReact, FaGitAlt } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiDjango,
+  SiVuedotjs,
+  SiDotnet,
   SiJavascript,
   SiNuxtdotjs,
   SiChakraui,
@@ -103,6 +105,68 @@ const ProjectsPage: React.FC = () => {
           </motion.div>
         )}
       </header>
+      {/* Valorant Franchising Database/API */}
+      <AnimatedSection id="vlr-database">
+        <div className="relative">
+          <div className="gooey section-blob"></div>
+          <div className="project-container max-w-6xl p-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Project Description */}
+            <div
+              className="glass-container p-6 rounded-lg shadow-lg grid place-items-center"
+              style={{ background: "rgba(253, 8, 28, 0.2)" }}
+            >
+              <h2 className="text-3xl font-semibold mb-4 text-white">
+                Valorant Franchising Database/API
+              </h2>
+              <p className="text-lg mb-6">
+                The VALORANT Franchising Database is a web application
+                accompanied by a custom made API designed to provide a
+                centralized hub of information about the franchised teams,
+                players, and regions participating in VALORANT esports, built
+                with Vue.js, and .NET 8 + Azure.
+              </p>
+              <div className="flex justify-start gap-4 my-4">
+                <SiVuedotjs className="text-green-500 text-2xl" />
+                <SiDotnet className="text-purple-700 text-2xl" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+                  alt="Azure Logo"
+                  className="w-6 h-6"
+                />
+                <SiJavascript className="text-yellow-300 text-2xl" />
+              </div>
+              <a
+                href="https://github.com/angelheredia138/vlr-franchising-database"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-300 transition"
+              >
+                Learn More (web app)
+              </a>
+              <a
+                href="https://github.com/angelheredia138/vlr-franchising-database"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-300 transition"
+              >
+                Learn More (API)
+              </a>
+            </div>
+            {/* Demo/Screenshot */}
+            <div
+              className="glass-container p-6 rounded-lg shadow-lg flex justify-center items-center"
+              style={{ background: "rgba(253, 8, 28, 0.2)" }}
+            >
+              <iframe
+                className="w-full h-96 rounded-lg shadow-lg"
+                src="https://angel-heredia.com/vlr-franchising-database/"
+                style={{ border: "none" }}
+                allow="fullscreen"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
 
       {/* Spotify Playback Controller */}
       <AnimatedSection id="spotify-playback">

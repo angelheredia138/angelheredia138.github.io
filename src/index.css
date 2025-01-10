@@ -274,6 +274,14 @@ button:focus-visible {
 }
 
 /* Section-Specific Blobs */
+#vlr-database .gooey {
+  --start-color: #ff4655; /* Purple tones */
+  --end-color: rgb(252, 13, 33);
+  --blob-size: 180px;
+  --start-top: 40%;
+}
+
+/* Section-Specific Blobs */
 #spotify-playback .gooey {
   --start-color: #8854d0; /* Purple tones */
   --end-color: #6a1b9a;
