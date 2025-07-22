@@ -144,7 +144,7 @@ const ContactPage: React.FC = () => {
               <p className="text-lg mt-6">
                 You can also download my resume{" "}
                 <a
-                  href="https://drive.google.com/file/d/1V6YAgkM5emvPH_1b02Fr1g5U4r5RH2MR/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1uD1lZ9NWn00GGXm8gFbmg0Rp7CZ9TEoq/preview?usp=drivesdk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-300"
