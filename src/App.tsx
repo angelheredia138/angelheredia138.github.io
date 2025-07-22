@@ -113,9 +113,12 @@ const App: React.FC = () => {
               Welcome to My Portfolio
             </h1>
             <p className="text-lg mb-6">
-              Hi, I’m Angel Heredia, a Computer Science student at Arizona State
-              University. Here, you’ll find my latest projects, updates, and
-              experience as I prepare for my career in tech.
+              Hi, I'm Angel Heredia, a recent <strong>summa cum laude</strong>{" "}
+              graduate from Arizona State University with a Computer Science
+              degree (2025). I just completed a Software Engineering Internship
+              at Progress Residential, where I built scalable notification
+              systems serving thousands of users. Here, you'll find my latest
+              projects and experience as I begin my career in tech.
             </p>
             <p className="text-lg font-medium text-white">
               Scroll down to learn some more about me!
@@ -131,10 +134,14 @@ const App: React.FC = () => {
           <div className="glass-container max-w-4xl p-8 text-center mx-auto">
             <h2 className="text-3xl font-semibold mb-4 text-white">About Me</h2>
             <p className="mb-6">
-              I’m passionate about building impactful software and constantly
-              growing as a developer. With graduation in 2025, I’m excited to
-              begin my career and take on challenges in full-stack development
-              and data visualization.
+              I'm passionate about building impactful software and recently
+              completed my Computer Science degree{" "}
+              <strong>summa cum laude</strong> in 2025. During my internship at
+              Progress Residential, I designed and developed a comprehensive
+              real-time notification system handling 15,000+ monthly events
+              using AWS Lambda, GraphQL, and React. I'm excited to continue
+              growing as a full-stack developer and take on new challenges in
+              software engineering.
             </p>
             <Link
               to="/about"

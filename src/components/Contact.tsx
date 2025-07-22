@@ -139,7 +139,7 @@ const ContactPage: React.FC = () => {
               </h2>
               <iframe
                 className="responsive-iframe"
-                src="https://drive.google.com/file/d/1V6YAgkM5emvPH_1b02Fr1g5U4r5RH2MR/preview?usp=drivesdk"
+                src="https://drive.google.com/file/d/1uD1lZ9NWn00GGXm8gFbmg0Rp7CZ9TEoq/preview?usp=drivesdk"
               ></iframe>
               <p className="text-lg mt-6">
                 You can also download my resume{" "}

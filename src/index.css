@@ -201,6 +201,16 @@ button:focus-visible {
   }
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Adjust AnimatedSection min-height for tighter spacing */
+.min-h-screen {
+  min-height: 90vh; /* Reduced from 100vh */
+}
+
 /* Section-Specific Blobs */
 #home .gooey,
 #about .gooey,
@@ -265,12 +275,20 @@ button:focus-visible {
   --animation-duration: 100s;
 }
 
-#skills .gooey {
-  --start-color: #ff9a9e; /* Pastel pink */
-  --end-color: #fad0c4; /* Light peach */
+#skills-experience .gooey {
+  --start-color: #4caf50; /* Green tones */
+  --end-color: #2575fc; /* Light peach */
   --start-top: 50%;
   --blob-size: 220px;
   --animation-duration: 110s;
+}
+
+#notification-system .gooey {
+  --start-color: #4caf50; /* Green tones */
+  --end-color: #2575fc; /* Blue tones */
+  --blob-size: 200px;
+  --start-top: 50%;
+  --animation-duration: 120s;
 }
 
 /* Section-Specific Blobs */
