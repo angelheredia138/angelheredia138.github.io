@@ -139,12 +139,12 @@ const ContactPage: React.FC = () => {
               </h2>
               <iframe
                 className="responsive-iframe"
-                src="https://drive.google.com/file/d/1CzPh9c3KO65iWTxfcTZFg14svqF_PYap/preview?usp=drivesdk"
+                src="https://drive.google.com/file/d/14ydApmOvlW13vNLoXCOvfZX73P6Zkycl/preview?usp=drivesdk"
               ></iframe>
               <p className="text-lg mt-6">
                 You can also download my resume{" "}
                 <a
-                  href="https://drive.google.com/file/d/1CzPh9c3KO65iWTxfcTZFg14svqF_PYap/preview?usp=drivesdk"
+                  href="https://drive.google.com/file/d/14ydApmOvlW13vNLoXCOvfZX73P6Zkycl/preview?usp=drivesdk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-300"
