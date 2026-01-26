@@ -1,13 +1,14 @@
 {
-  "name": "angular-portfolio",
+  "homepage": "https://angelheredia138.github.io",
+  "name": "my-portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "build:gh": "ng build --base-href '/one-page-portfolio/'",
-    "deploy:gh": "ng build --base-href '/one-page-portfolio/' && npx angular-cli-ghpages --dir=dist/angular-portfolio",
+    "predeploy": "ng build --output-path=dist --base-href https://angelheredia138.github.io/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/browser --cname=angel-heredia.com",
     "test": "ng test"
   },
   "prettier": {
