@@ -1,0 +1,187 @@
+<div class="portfolio-container">
+  <!-- Left Section -->
+  <div class="section-left">
+    <div class="profile-content">
+      <!-- Profile Photo -->
+      <div class="profile-photo">
+        <img
+          src="photo.jpg"
+          alt="Angel Heredia"
+          class="profile-image"
+          (error)="hideProfileImage = true"
+          [style.display]="hideProfileImage ? 'none' : 'block'"
+        />
+        <div class="profile-icon-fallback" [style.display]="hideProfileImage ? 'flex' : 'none'">
+          <i class="fas fa-user fa-3x"></i>
+        </div>
+      </div>
+
+      <h1 class="name">Angel Heredia</h1>
+      <p class="title">Software Developer</p>
+      <p class="location">Tucson, AZ</p>
+
+      <div class="social-links">
+        <a
+          *ngFor="let link of socialLinks"
+          [href]="link.url"
+          target="_blank"
+          [attr.aria-label]="link.label"
+          class="social-link"
+        >
+          <i [class]="link.icon"></i>
+        </a>
+      </div>
+
+      <div class="education">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div class="education-item">
+          <strong>{{ education.institution }}</strong>
+          <p>{{ education.degree }}</p>
+          <p class="graduation">{{ education.graduation }}</p>
+          <div class="coursework">
+            <h4>Key Courses:</h4>
+            <ul class="coursework-list">
+              <li *ngFor="let course of education.coursework">
+                <i [class]="course.icon"></i>
+                {{ course.name }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-right">
+    <div class="content-scroll">
+      <section class="content-section">
+        <h2>About</h2>
+        <p>
+          Hello! I recently graduated from Arizona State University and have about 4 years of
+          experience as a full-stack developer. I currently work at AstreaX as a Software Developer,
+          focusing on enterprise applications with C# and Angular. I've also worked with AWS
+          serverless architecture, data visualization, and AR development. I'm passionate about
+          clean code, good architecture, and creating great user experiences.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Experience</h2>
+        <div *ngFor="let job of experience" class="experience-item">
+          <div class="job-header">
+            <div class="job-title-company">
+              <strong><i [class]="job.icon"></i> {{ job.title }}</strong>
+              <div class="company">{{ job.company }} - {{ job.location }}</div>
+            </div>
+            <span class="period">{{ job.period }}</span>
+          </div>
+
+          <div class="tech-stack">
+            <span *ngFor="let tech of job.stack" class="tech-item">
+              <i [class]="tech.icon"></i> {{ tech.name }}
+            </span>
+          </div>
+
+          <ul class="summary">
+            <li *ngFor="let point of job.summary">{{ point }}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Languages</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.languages" class="skill-tag">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Frameworks</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.frameworks" class="skill-tag">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Cloud & DevOps</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.cloud" class="skill-tag">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Databases</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.databases" class="skill-tag">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Tools & Practices</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.tools" class="skill-tag">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Featured Projects</h2>
+        <div *ngFor="let project of projects" class="project-item">
+          <div class="project-header">
+            <h4>{{ project.name }}</h4>
+            <div class="project-links">
+              <span class="project-year">{{ project.year }}</span>
+              <a
+                [href]="project.github"
+                target="_blank"
+                class="github-link"
+                [attr.aria-label]="'View ' + project.name + ' on GitHub'"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <span *ngFor="let tech of project.tech" class="tech-item">
+              <i [class]="tech.icon"></i> {{ tech.name }}
+            </span>
+          </div>
+
+          <p class="project-description">{{ project.description }}</p>
+          <ul class="project-summary">
+            <li *ngFor="let point of project.summary">{{ point }}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Let's Connect</h2>
+        <div class="contact-info">
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:herediafangel@gmail.com">herediafangel@gmail.com</a>
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+16025785421">(602) 578-5421</a>
+          </p>
+          <p>
+            <i class="fas fa-globe"></i>
+            <a href="https://angel-heredia.com" target="_blank">angel-heredia.com</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
