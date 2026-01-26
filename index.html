@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-beasties-container>
+  <head>
+    <meta charset="utf-8">
+    <title>Angel Heredia</title>
+    <base href="https://angelheredia138.github.io/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+      (function () {
+        const themes = {
+          1: {
+            '--color-bg-darkest': '#0e0f0d',
+            '--color-bg-darker': '#13140f',
+            '--color-bg-dark': '#2a2f27',
+            '--color-bg-medium': '#353a32',
+            '--color-bg-divider': '#404539',
+            '--color-bg-border': '#4f5548',
+            '--color-bg-hover': '#5f6558',
+            '--color-bg-subtle': '#6f7568',
+            '--color-text-white': '#f0f5ed',
+            '--color-text-primary': '#d8e6d0',
+            '--color-text-secondary': '#c0d6b3',
+            '--color-text-tertiary': '#a8c696',
+            '--color-text-muted': '#90b679',
+          },
+          2: {
+            '--color-bg-darkest': '#050a0f',
+            '--color-bg-darker': '#080e14',
+            '--color-bg-dark': '#0f1a25',
+            '--color-bg-medium': '#152535',
+            '--color-bg-divider': '#1e3545',
+            '--color-bg-border': '#2d4555',
+            '--color-bg-hover': '#3d5565',
+            '--color-bg-subtle': '#4d6575',
+            '--color-text-white': '#e3f0ff',
+            '--color-text-primary': '#c8e1ff',
+            '--color-text-secondary': '#add2ff',
+            '--color-text-tertiary': '#92c3ff',
+            '--color-text-muted': '#77b4ff',
+          },
+          3: {
+            '--color-bg-darkest': '#0d0908',
+            '--color-bg-darker': '#120e0a',
+            '--color-bg-dark': '#1f1510',
+            '--color-bg-medium': '#2a1e18',
+            '--color-bg-divider': '#3d2e24',
+            '--color-bg-border': '#4d3e34',
+            '--color-bg-hover': '#5d4e44',
+            '--color-bg-subtle': '#6d5e54',
+            '--color-text-white': '#f5ede8',
+            '--color-text-primary': '#e6d8d0',
+            '--color-text-secondary': '#d6c3b8',
+            '--color-text-tertiary': '#c6ae9f',
+            '--color-text-muted': '#b69987',
+          },
+          4: {
+            '--color-bg-darkest': '#0a060d',
+            '--color-bg-darker': '#100a14',
+            '--color-bg-dark': '#1e1225',
+            '--color-bg-medium': '#2c1a35',
+            '--color-bg-divider': '#3a2445',
+            '--color-bg-border': '#4a3455',
+            '--color-bg-hover': '#5a4465',
+            '--color-bg-subtle': '#6a5475',
+            '--color-text-white': '#f0e6ff',
+            '--color-text-primary': '#e0ccff',
+            '--color-text-secondary': '#d0b3ff',
+            '--color-text-tertiary': '#c099ff',
+            '--color-text-muted': '#b080ff',
+          },
+          5: {
+            '--color-bg-darkest': '#08090a',
+            '--color-bg-darker': '#0e0f10',
+            '--color-bg-dark': '#181a1e',
+            '--color-bg-medium': '#22252a',
+            '--color-bg-divider': '#2c3035',
+            '--color-bg-border': '#3c4045',
+            '--color-bg-hover': '#4c5055',
+            '--color-bg-subtle': '#5c6065',
+            '--color-text-white': '#f0f2f5',
+            '--color-text-primary': '#d8dce0',
+            '--color-text-secondary': '#c0c6cc',
+            '--color-text-tertiary': '#a8b0b8',
+            '--color-text-muted': '#909aa4',
+          },
+          6: {
+            '--color-bg-darkest': '#0c0608',
+            '--color-bg-darker': '#130a0d',
+            '--color-bg-dark': '#221318',
+            '--color-bg-medium': '#301c23',
+            '--color-bg-divider': '#3e262e',
+            '--color-bg-border': '#4e363e',
+            '--color-bg-hover': '#5e464e',
+            '--color-bg-subtle': '#6e565e',
+            '--color-text-white': '#f5e8ed',
+            '--color-text-primary': '#e8d0da',
+            '--color-text-secondary': '#dbb8c7',
+            '--color-text-tertiary': '#cea0b4',
+            '--color-text-muted': '#c188a1',
+          },
+          0: {
+            '--color-bg-darkest': '#07080d',
+            '--color-bg-darker': '#0b0d14',
+            '--color-bg-dark': '#141723',
+            '--color-bg-medium': '#1d2230',
+            '--color-bg-divider': '#262d3d',
+            '--color-bg-border': '#363d4d',
+            '--color-bg-hover': '#464d5d',
+            '--color-bg-subtle': '#565d6d',
+            '--color-text-white': '#e8edff',
+            '--color-text-primary': '#d0daf5',
+            '--color-text-secondary': '#b8c7eb',
+            '--color-text-tertiary': '#a0b4e1',
+            '--color-text-muted': '#88a1d7',
+          },
+        };
+
+        const dayOfWeek = new Date().getDay();
+        const todayTheme = themes[dayOfWeek];
+
+        const root = document.documentElement;
+        for (const [property, value] of Object.entries(todayTheme)) {
+          root.style.setProperty(property, value);
+        }
+      })();
+    </script>
+  <style>*{margin:0;padding:0;box-sizing:border-box}body{margin:0;padding:0;font-family:Inter,sans-serif;background:#0a0a0a;color:#e0e0e0;overflow:hidden}html,body{height:100%}:root{--color-bg-darkest:#08090b;--color-bg-darker:#0d0e11;--color-bg-dark:#181a1f;--color-bg-medium:#23252c;--color-bg-divider:#2e3139;--color-bg-border:#3e4149;--color-bg-hover:#4e5159;--color-bg-subtle:#5e6169;--color-text-white:#edf0f5;--color-text-primary:#d5dbe3;--color-text-secondary:#bdc6d1;--color-text-tertiary:#a5b1bf;--color-text-muted:#8d9cad}</style><link rel="stylesheet" href="styles-T24DYP3T.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-T24DYP3T.css"></noscript></head>
+  <body>
+    <app-root></app-root>
+  <script src="main-TATIMTSP.js" type="module"></script></body>
+</html>
