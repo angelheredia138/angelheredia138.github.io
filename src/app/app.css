@@ -457,13 +457,23 @@
   .portfolio-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    height: auto;
+    min-height: 100vh;
   }
 
   .section-left {
     padding: 2rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--color-bg-border);
+  }
+
+  .section-right {
+    overflow: visible;
   }
 
   .content-scroll {
+    height: auto;
+    overflow-y: visible;
     padding: 2rem 1.5rem;
   }
 

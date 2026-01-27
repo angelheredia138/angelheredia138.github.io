@@ -18,6 +18,17 @@ body {
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  body {
+    overflow: visible;
+    height: auto;
+  }
+
+  html {
+    height: auto;
+  }
+}
+
 :root {
   --color-bg-darkest: #08090b;
   --color-bg-darker: #0d0e11;
