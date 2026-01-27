@@ -34,5 +34,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          COMMIT_MSG=$(git log -1 --pretty=%B)
-          npx angular-cli-ghpages --dir=dist/browser --cname=angel-heredia.com --no-silent --repo=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git --message="$COMMIT_MSG"
+          npx angular-cli-ghpages --dir=dist/browser --cname=angel-heredia.com --no-silent --repo=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
