@@ -1,8 +1,6 @@
 <div class="portfolio-container">
-  <!-- Left Section -->
   <div class="section-left">
     <div class="profile-content">
-      <!-- Profile Photo -->
       <div class="profile-photo">
         <img
           src="photo.jpg"
@@ -26,6 +24,7 @@
           [href]="link.url"
           target="_blank"
           [attr.aria-label]="link.label"
+          [attr.title]="link.label"
           class="social-link"
         >
           <i [class]="link.icon"></i>
@@ -60,8 +59,7 @@
           Hello! I recently graduated from Arizona State University and have about 4 years of
           experience as a full-stack developer. I currently work at AstreaX as a Software Developer,
           focusing on enterprise applications with C# and Angular. I've also worked with AWS
-          serverless architecture, data visualization, and AR development. I'm passionate about
-          clean code, good architecture, and creating great user experiences.
+          serverless architecture, data visualization, and AR development.
         </p>
       </section>
 

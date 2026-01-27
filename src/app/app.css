@@ -481,10 +481,6 @@
     max-width: none;
   }
 
-  .education {
-    text-align: center;
-  }
-
   .job-header {
     flex-direction: column;
     align-items: flex-start;
@@ -498,5 +494,25 @@
   .profile-photo {
     width: 130px;
     height: 130px;
+  }
+
+  .social-link:hover,
+  .social-link:focus,
+  .social-link:active {
+    color: var(--color-text-muted);
+    transform: none;
+    outline: none;
+  }
+
+  .github-link:hover,
+  .github-link:focus,
+  .github-link:active {
+    color: var(--color-text-muted);
+    transform: none;
+    outline: none;
+  }
+
+  .profile-image:hover {
+    transform: scale(1.1);
   }
 }

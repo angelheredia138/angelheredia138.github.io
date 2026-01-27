@@ -15,6 +15,11 @@ export class App {
   socialLinks = [
     { icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/herediafangel', label: 'LinkedIn' },
     { icon: 'fab fa-github', url: 'https://github.com/angelheredia138', label: 'GitHub' },
+    {
+      icon: 'fas fa-file-alt',
+      url: 'https://drive.google.com/file/d/145bJjb1q9--0GkM_ho3ukq1B8VJ_fq4A/view?usp=sharing',
+      label: 'Resume',
+    },
     { icon: 'fas fa-envelope', url: 'mailto:herediafangel@gmail.com', label: 'Email' },
     { icon: 'fas fa-phone', url: 'tel:+16025785421', label: 'Phone' },
   ];
@@ -114,7 +119,7 @@ export class App {
       description:
         'Interactive platform that analyzes your Spotify listening patterns with beautiful visualizations.',
       summary: [
-        'Ever wondered what your music taste actually looks like? This app connects to your Spotify and creates cool charts and graphs.',
+        'Ever wondered what your music taste actually looks like? This app connects to your Spotify and creates cool charts and graphs (invite only though, Spotify API restrictions).',
         'Built with React and D3.js for interactive visualizations, plus OAuth so it can securely access your listening data.',
       ],
     },
