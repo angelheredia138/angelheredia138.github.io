@@ -17,7 +17,7 @@ export class App {
     { icon: 'fab fa-github', url: 'https://github.com/angelheredia138', label: 'GitHub' },
     {
       icon: 'fas fa-file-alt',
-      url: 'https://drive.google.com/file/d/145bJjb1q9--0GkM_ho3ukq1B8VJ_fq4A/view?usp=sharing',
+      url: 'https://drive.google.com/file/d/1-uh3FkAnt4V6OIoMSKsc5OrfeyKKhykS/view?usp=sharing',
       label: 'Resume',
     },
     { icon: 'fas fa-envelope', url: 'mailto:herediafangel@gmail.com', label: 'Email' },
@@ -49,10 +49,12 @@ export class App {
         { name: '.NET', icon: 'fas fa-code' },
         { name: 'Angular', icon: 'fab fa-angular' },
         { name: 'SQL Server', icon: 'fas fa-database' },
+        { name: 'Azure', icon: 'fab fa-microsoft' },
       ],
       summary: [
-        'Building a government printing management system that serves multiple states, making sure ADOT documents like towing notifications and official correspondence get printed properly across jurisdictions.',
-        'Working with the full stack from Angular frontend to .NET APIs and SQL databases, focusing on clean architecture and enterprise patterns.',
+        "Building features for Arizona Mobile ID, the state's digital driver license for Apple and Google Wallet, across the MVD's internal system of record and the AZ MVD Now customer portal.",
+        'Working with Angular for frontend work, .NET services for business logic, and SQL Server for data on features like mobile appointment integration, digital vehicle document copies, mobile credential locking and unlocking, plus security hardening for wallet integrations.',
+        'Previously built a multi-state government print management system, creating admin tools for print stock and document types with clean architecture and enterprise patterns.',
       ],
     },
     {
@@ -70,6 +72,7 @@ export class App {
       summary: [
         'Created a real-time notification system that handles 15,000+ events monthly for property management, helping notify users of application updates and important information.',
         'Built it completely serverless on AWS with Lambda functions, WebSocket subscriptions, and React frontend with Redux state management.',
+        'Led technical design sessions with senior engineers and managed the AWS infrastructure as code with Terraform.',
       ],
     },
     {
@@ -84,7 +87,7 @@ export class App {
         { name: 'C#' },
       ],
       summary: [
-        'Led development of a mobile augmented reality application using Unity and AR frameworks.',
+        'Led development of a mobile augmented reality application using Unity and AR frameworks, following Agile practices.',
       ],
     },
   ];
@@ -130,31 +133,54 @@ export class App {
       { name: 'C#' },
       { name: 'TypeScript', icon: 'fab fa-js-square' },
       { name: 'SQL', icon: 'fas fa-database' },
+      { name: 'KQL', icon: 'fas fa-magnifying-glass-chart' },
       { name: 'Java', icon: 'fab fa-java' },
       { name: 'C++', icon: 'fas fa-code' },
     ],
     frameworks: [
       { name: '.NET 8', icon: 'fas fa-code' },
+      { name: 'ASP.NET Core', icon: 'fas fa-server' },
+      { name: 'Entity Framework Core', icon: 'fas fa-layer-group' },
       { name: 'Angular', icon: 'fab fa-angular' },
+      { name: 'PrimeNG', icon: 'fas fa-puzzle-piece' },
       { name: 'React', icon: 'fab fa-react' },
       { name: 'Vue.js', icon: 'fab fa-vuejs' },
     ],
     cloud: [
       { name: 'Azure', icon: 'fab fa-microsoft' },
+      { name: 'Azure Log Analytics', icon: 'fas fa-chart-line' },
+      { name: 'Azure DevOps', icon: 'fas fa-list-check' },
       { name: 'AWS Lambda', icon: 'fab fa-aws' },
+      { name: 'AWS AppSync', icon: 'fab fa-aws' },
       { name: 'Terraform', icon: 'fas fa-cloud' },
       { name: 'CI/CD', icon: 'fas fa-sync' },
     ],
     databases: [
       { name: 'SQL Server', icon: 'fas fa-database' },
+      { name: 'Stored Procedures', icon: 'fas fa-scroll' },
+      { name: 'SSMS', icon: 'fas fa-terminal' },
       { name: 'MongoDB', icon: 'fas fa-leaf' },
-      { name: 'PostgreSQL', icon: 'fas fa-elephant' },
+      { name: 'PostgreSQL', icon: 'fas fa-database' },
+    ],
+    security: [
+      { name: 'ISO 18013-5 (mDL)', icon: 'fas fa-id-card' },
+      { name: 'Mobile Wallets', icon: 'fas fa-wallet' },
+      { name: 'mTLS', icon: 'fas fa-lock' },
+      { name: 'PII Redaction', icon: 'fas fa-user-shield' },
     ],
     tools: [
       { name: 'Visual Studio', icon: 'fas fa-code' },
       { name: 'Git', icon: 'fab fa-git-alt' },
+      { name: 'Postman', icon: 'fas fa-paper-plane' },
+      { name: 'Swagger/OpenAPI', icon: 'fas fa-file-code' },
+      { name: 'Claude Code', icon: 'fas fa-robot' },
+      { name: 'GitHub Copilot', icon: 'fab fa-github' },
       { name: 'REST/GraphQL', icon: 'fas fa-exchange-alt' },
       { name: 'Agile/Scrum', icon: 'fas fa-users' },
+      { name: 'Clean Architecture', icon: 'fas fa-sitemap' },
+      { name: 'Code Review', icon: 'fas fa-code-pull-request' },
+      { name: 'Repository Pattern', icon: 'fas fa-box-archive' },
+      { name: 'Dependency Injection', icon: 'fas fa-syringe' },
     ],
   };
 }

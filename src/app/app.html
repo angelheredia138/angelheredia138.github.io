@@ -56,10 +56,11 @@
       <section class="content-section">
         <h2>About</h2>
         <p>
-          Hello! I recently graduated from Arizona State University and have about 4 years of
-          experience as a full-stack developer. I currently work at AstreaX as a Software Developer,
-          focusing on enterprise applications with C# and Angular. I've also worked with AWS
-          serverless architecture, data visualization, and AR development.
+          Hello! I graduated from Arizona State University in 2025 and have about 4 years of
+          experience as a full-stack developer. I currently work at AstreaX as a Software Developer
+          on the Arizona Mobile ID team, focusing on digital identity and enterprise applications
+          with C#, .NET, and Angular. I've also worked with AWS serverless architecture, data
+          visualization, and AR development.
         </p>
       </section>
 
@@ -122,6 +123,14 @@
             </div>
           </div>
           <div class="skill-category">
+            <h4>Security & Identity</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.security" class="skill-tag">
+                <i [class]="skill.icon"></i> {{ skill.name }}
+              </span>
+            </div>
+          </div>
+          <div class="skill-category">
             <h4>Tools & Practices</h4>
             <div class="skill-tags">
               <span *ngFor="let skill of skills.tools" class="skill-tag">
@@ -164,19 +173,31 @@
       </section>
 
       <section class="content-section">
-        <h2>Let's Connect</h2>
+        <h2>Contact Info</h2>
         <div class="contact-info">
           <p>
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:herediafangel@gmail.com">herediafangel@gmail.com</a>
+            <i class="fas fa-location-dot"></i>
+            <span>Tucson, AZ</span>
           </p>
           <p>
             <i class="fas fa-phone"></i>
             <a href="tel:+16025785421">(602) 578-5421</a>
           </p>
           <p>
-            <i class="fas fa-globe"></i>
-            <a href="https://angel-heredia.com" target="_blank">angel-heredia.com</a>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:herediafangel@gmail.com">herediafangel@gmail.com</a>
+          </p>
+          <p>
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/herediafangel" target="_blank"
+              >linkedin.com/in/herediafangel</a
+            >
+          </p>
+          <p>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/angelheredia138" target="_blank"
+              >github.com/angelheredia138</a
+            >
           </p>
         </div>
       </section>
